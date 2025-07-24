@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #fffde7 100%);
+    margin: 0;
+    padding: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="60" rx="40" ry="18" fill="%23c8e6c9" fill-opacity="0.25"/><ellipse cx="340" cy="120" rx="30" ry="12" fill="%23ffd600" fill-opacity="0.18"/><text x="200" y="200" font-size="48" font-family="Segoe UI, Arial" fill="%2343a047" fill-opacity="0.13" font-weight="bold">$</text><text x="80" y="320" font-size="36" font-family="Segoe UI, Arial" fill="%23ffd600" fill-opacity="0.13" font-weight="bold">€</text><text x="320" y="60" font-size="36" font-family="Segoe UI, Arial" fill="%2343a047" fill-opacity="0.13" font-weight="bold">¥</text><circle cx="300" cy="350" r="18" fill="%23ffd600" fill-opacity="0.13"/><circle cx="120" cy="100" r="12" fill="%2343a047" fill-opacity="0.13"/></svg>');
+    background-repeat: repeat;
+    background-size: 400px 400px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 32px rgba(34, 139, 34, 0.10);
+    padding: 36px 28px 28px 28px;
+    border: 2px solid #a5d6a7;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '\0024'; /* Dollar sign Unicode */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 3rem;
+    color: #c8e6c9;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+}
+
+h1, h2 {
+    color: #388e3c;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+form {
+    margin-bottom: 24px;
+    z-index: 1;
+    position: relative;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #388e3c;
+    font-weight: 600;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #a5d6a7;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background: #f1f8e9;
+    color: #2e7d32;
+    transition: border 0.2s;
+}
+
+input[type="number"]:focus {
+    border: 1.5px solid #ffd600;
+    outline: none;
+}
+
+button[type="submit"], #export-csv {
+    background: linear-gradient(90deg, #43a047 60%, #ffd600 100%);
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(67, 160, 71, 0.10);
+    transition: background 0.2s, color 0.2s;
+}
+
+button[type="submit"]:hover, #export-csv:hover {
+    background: linear-gradient(90deg, #388e3c 60%, #ffd600 100%);
+    color: #263238;
+}
+
+.results {
+    background: #f9fbe7;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 24px;
+    color: #222;
+    border-left: 5px solid #ffd600;
+    box-shadow: 0 2px 8px rgba(255, 214, 0, 0.06);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #f1f8e9;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 11px 8px;
+    border: 1px solid #c5e1a5;
+    text-align: right;
+}
+
+th {
+    background: linear-gradient(90deg, #43a047 60%, #ffd600 100%);
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+td {
+    color: #2e7d32;
+    background: #f9fbe7;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 12px 4px 16px 4px;
+    }
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+    th, td {
+        font-size: 0.95rem;
+        padding: 7px 4px;
+    }
+} 
